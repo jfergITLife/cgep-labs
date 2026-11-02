@@ -1,0 +1,137 @@
+{
+  "evidence_kind": "sanitized_configuration_extract",
+  "source_section": "planned_values",
+  "deployment_phase": "post-deployment, after tag corrections",
+  "limitations": [
+    "Not a complete Terraform plan or state export.",
+    "Identifiers, outputs, and unselected fields are omitted.",
+    "Does not prove actual access-log delivery or audit review."
+  ],
+  "resources": [
+    {
+      "address": "aws_s3_bucket.log",
+      "type": "aws_s3_bucket",
+      "name": "log",
+      "values": {
+        "tags": {},
+        "tags_all": {
+          "ComplianceScope": "cge-p-lab",
+          "Environment": "dev",
+          "ManagedBy": "terraform",
+          "Project": "cgep-lab"
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket.primary",
+      "type": "aws_s3_bucket",
+      "name": "primary",
+      "values": {
+        "tags": {},
+        "tags_all": {
+          "ComplianceScope": "cge-p-lab",
+          "Environment": "dev",
+          "ManagedBy": "terraform",
+          "Project": "cgep-lab"
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket_acl.log",
+      "type": "aws_s3_bucket_acl",
+      "name": "log",
+      "values": {
+        "acl": "log-delivery-write"
+      }
+    },
+    {
+      "address": "aws_s3_bucket_logging.primary",
+      "type": "aws_s3_bucket_logging",
+      "name": "primary",
+      "values": {
+        "target_prefix": "access-logs/"
+      }
+    },
+    {
+      "address": "aws_s3_bucket_ownership_controls.log",
+      "type": "aws_s3_bucket_ownership_controls",
+      "name": "log",
+      "values": {
+        "rule": [
+          {
+            "object_ownership": "BucketOwnerPreferred"
+          }
+        ]
+      }
+    },
+    {
+      "address": "aws_s3_bucket_public_access_block.log",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "log",
+      "values": {
+        "block_public_acls": true,
+        "block_public_policy": true,
+        "ignore_public_acls": true,
+        "restrict_public_buckets": true
+      }
+    },
+    {
+      "address": "aws_s3_bucket_public_access_block.primary",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "primary",
+      "values": {
+        "block_public_acls": true,
+        "block_public_policy": true,
+        "ignore_public_acls": true,
+        "restrict_public_buckets": true
+      }
+    },
+    {
+      "address": "aws_s3_bucket_server_side_encryption_configuration.log",
+      "type": "aws_s3_bucket_server_side_encryption_configuration",
+      "name": "log",
+      "values": {
+        "rule": [
+          {
+            "apply_server_side_encryption_by_default": [
+              {
+                "sse_algorithm": "AES256"
+              }
+            ],
+            "bucket_key_enabled": false
+          }
+        ]
+      }
+    },
+    {
+      "address": "aws_s3_bucket_server_side_encryption_configuration.primary",
+      "type": "aws_s3_bucket_server_side_encryption_configuration",
+      "name": "primary",
+      "values": {
+        "rule": [
+          {
+            "apply_server_side_encryption_by_default": [
+              {
+                "sse_algorithm": "AES256"
+              }
+            ],
+            "bucket_key_enabled": false
+          }
+        ]
+      }
+    },
+    {
+      "address": "aws_s3_bucket_versioning.primary",
+      "type": "aws_s3_bucket_versioning",
+      "name": "primary",
+      "values": {
+        "versioning_configuration": [
+          {
+            "mfa_delete": "",
+            "status": "Enabled"
+          }
+        ]
+      }
+    }
+  ]
+}

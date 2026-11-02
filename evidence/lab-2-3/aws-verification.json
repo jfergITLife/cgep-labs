@@ -1,0 +1,60 @@
+{
+  "collected_at_utc": "2026-11-02T23:11:40.099622+00:00",
+  "source": "Independent AWS CLI read-only API queries",
+  "account_identity_verified": true,
+  "checks": {
+    "primary": {
+      "encryption_algorithms": [
+        "AES256"
+      ],
+      "public_access_block": {
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": true,
+        "RestrictPublicBuckets": true
+      },
+      "tags": {
+        "Project": "cgep-lab",
+        "Environment": "dev",
+        "ManagedBy": "terraform",
+        "ComplianceScope": "cge-p-lab"
+      },
+      "versioning": "Enabled",
+      "region": "us-east-1"
+    },
+    "log": {
+      "encryption_algorithms": [
+        "AES256"
+      ],
+      "public_access_block": {
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": true,
+        "RestrictPublicBuckets": true
+      },
+      "tags": {
+        "Project": "cgep-lab",
+        "Environment": "dev",
+        "ManagedBy": "terraform",
+        "ComplianceScope": "cge-p-lab"
+      },
+      "versioning": "Not enabled",
+      "region": "us-east-1"
+    },
+    "logging": {
+      "target_matches_log_bucket": true,
+      "prefix": "access-logs/",
+      "ownership": "BucketOwnerPreferred",
+      "group_permissions": [
+        "READ_ACP",
+        "WRITE"
+      ],
+      "observed_log_objects_sample_count": 0
+    }
+  },
+  "limitations": [
+    "Configuration supports controls; does not establish full NIST compliance or an operational log-review process.",
+    "Log object presence does not establish complete request coverage. Delivery is best-effort.",
+    "Log bucket versioning is not enabled, matching the guide code."
+  ]
+}

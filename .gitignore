@@ -10,3 +10,15 @@ crash.log
 
 # OS noise
 .DS_Store
+
+# Additional saved Terraform plans
+tfplan-*
+
+# Private evidence exports
+private-evidence/
+*.tfvars.json
+*.raw.json
+__pycache__/
+*.pyc
+.env
+.env.*
