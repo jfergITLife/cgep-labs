@@ -1,0 +1,14 @@
+{
+  "verified_at_utc": "2026-11-02T23:17:12.833829+00:00",
+  "terraform_managed_resources_remaining": 0,
+  "primary_bucket_absent_from_owned_buckets": true,
+  "log_bucket_absent_from_owned_buckets": true,
+  "scope": "Logging was disabled first; the remaining 10 lab resources were destroyed with a reviewed Terraform plan. Account, identities, budget and other resources retained.",
+  "evidence_preserved_before_teardown": true,
+  "cleanup_observations": {
+    "primary_objects_or_versions": 0,
+    "log_objects_or_versions_removed": 1,
+    "log_object_prefix": "access-logs/",
+    "log_record_contents_reviewed": false
+  }
+}

@@ -10,4 +10,4 @@ The configuration was checked for encryption, public-access blocks, tags, primar
 
 Identifiers, outputs and unselected attributes are omitted from the public plan/state extracts. They have a custom `resources` structure and are not drop-in inputs for later policies expecting native Terraform plan/state schemas. Private originals are excluded from Git.
 
-Status at initial evidence publication: deployment verified; teardown pending. Consult `cleanup.json` for final status when present.
+Final status: deployment verified and evidence pushed before teardown. Logging was disabled first, then the remaining 10 managed resources were destroyed. Both buckets were independently confirmed absent from AWS. See `cleanup.json`. No log objects were present during the initial verification; one object under access-logs/ was observed and removed during cleanup. Its record contents were not reviewed, so request coverage and audit review are not established.
